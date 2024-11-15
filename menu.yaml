@@ -4,21 +4,13 @@ SHELLCONFIG : config.ini
 ENV :
     TESTENV : testenv
 
-Service configuration :
-    NOTE : various services
+Postgresql :
+    NOTE : postgresql operations
 
-    Web server (Apache) : httpd/httpd_install.sh   
-    NFS server : nfssvr.sh   
-    create instance user : crInstUsr.sh   
-    configure /var/ct/cfg/netmon.cf : netmon.sh
-    setup iscsi target : iscsiTarget.sh
-    setup iscsi member clients : iscsiMember.sh
-    create a pureScale instance : pSCreateInstance.sh
+    Installation : postgresql/postgreInstall.sh
 
-pureScal operations : 
-    NOTE : MISC operation 
+mysql : 
+    NOTE : mysql operations
 
-    iscsi initiator configuration check : iscsiOps.sh check
-    iscsi initiator restart : iscsiOps.sh restart
-    iscsi disk initialize (Wipe out enough first blocks. Be careful !!)  : iscsiOps.sh zeroinit
+    Installation : postgresql/postgreInstall.sh
 

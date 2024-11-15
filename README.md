@@ -14,6 +14,8 @@ Also documenting my thoughts with comparison.
 
 ## Run menus
 
+Download this repo.  
+
 Install prereq. and python libs.  
 ```
 ./0_osenv.sh
