@@ -8,8 +8,24 @@ Also documenting my thoughts with comparison.
 
 - [Databases](#databases)
   - [Contents](#contents)
+  - [Run menus](#run-menus)
   - [Reference](#reference)
 
+
+## Run menus
+
+Install prereq. and python libs.  
+```
+./0_osenv.sh
+```
+
+Run menu.
+
+```
+menu.py
+```
+
+[Go to content](#contents)
 
 ## Reference
 
