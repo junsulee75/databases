@@ -7,9 +7,9 @@ source jscommon.sh
 
 echo "OS is $PRETTY_NAME. Will install posgresql version  $POSTGRE_VER "
 
-case $REHL_MAINVER in 
+case $RHEL_MAINVER in 
 	8 ) REHL_REPO_URL="https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm" ;;
-	* ) echo "$REHL_MAINVER is unknown version" && exit ;;
+	* ) echo "$RHEL_MAINVER is unknown version" && exit ;;
 esac
 
 
@@ -47,8 +47,8 @@ pgStatus(){
 }	
 	
 
-#installRepo
-#disableBuiltIn
-#installPostgre
-#initDB
+installRepo
+disableBuiltIn
+installPostgre
+initDB
 pgStatus
