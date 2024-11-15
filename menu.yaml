@@ -12,5 +12,5 @@ Postgresql :
 mysql : 
     NOTE : mysql operations
 
-    Installation : postgresql/postgreInstall.sh
+    Installation : mysql/mysqlInstall.sh
 
