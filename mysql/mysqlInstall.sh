@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #source `pwd`/conf ## for /bin/ksh
-source config.ini # use /bin/bash for reading from the current directory
-source jscommon.sh
+source ../config.ini # use /bin/bash for reading from the current directory
+source ../jscommon.sh
 
 
 echo "OS is $PRETTY_NAME. "
@@ -32,7 +32,7 @@ installRepo(){
 }
 
 disableBuiltIn(){
-	disp_msglvl2 "Disable the built-in mysql module ( on Red Hat 8 only ) "
+	disp_msglvl1 "Disable the built-in mysql module ( on Red Hat 8 only ) "
 	sudo yum -y module disable mysql  # on Red Hat 8 only
 }
 

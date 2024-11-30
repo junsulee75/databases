@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #source `pwd`/conf ## for /bin/ksh
-source config.ini # use /bin/bash for reading from the current directory
-source jscommon.sh
+source ../config.ini # use /bin/bash for reading from the current directory
+source ../jscommon.sh
 
 
 echo "OS is $PRETTY_NAME. Will install posgresql version  $POSTGRE_VER "
