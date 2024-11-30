@@ -8,7 +8,7 @@ Postgresql :
     NOTE : postgresql operations
 
     Installation : postgresql/postgreInstall.sh
-    Installation : postgresql/postgreUninstall.sh
+    Uninstallation : postgresql/postgreUninstall.sh
 
 mysql : 
     NOTE : mysql operations
