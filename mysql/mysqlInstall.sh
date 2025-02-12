@@ -17,7 +17,8 @@ esac
 
 installRepo(){
 	
-	print1 "mysql repository download : $MYSQL_YUMRPM "
+	print1 "mysql repository download : $MYSQL_YUMRPM " 
+	# JSTODO : download path change.   
 	wget https://dev.mysql.com/get/$MYSQL_YUMRPM
 	
 	if [ $? -ne 0 ]; then
@@ -70,7 +71,7 @@ dbStatus(){
 	disp_msglvl2 "status"
 	systemctl status mysqld
 	disp_msglvl2 "processes"
-	ps -ef |grep post |grep -v grep
+	ps -ef |grep mysql |grep -v grep
 	
 }	
 	
