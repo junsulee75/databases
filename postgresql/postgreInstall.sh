@@ -44,6 +44,9 @@ pgStatus(){
 	systemctl status postgresql-${POSTGRE_VER}
 	disp_msglvl2 "processes"
 	ps -ef |grep post |grep -v grep
+	disp_msglvl2 "Check postgres user home directory"
+	grep postgres /etc/passwd
+	grep postgres /etc/group
 	
 }	
 	
