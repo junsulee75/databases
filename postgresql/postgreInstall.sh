@@ -31,7 +31,7 @@ installPostgre(){
 
 initDB(){
 	disp_msglvl2 "Init DB"
-	sudo /usr/pgsql-15/bin/postgresql-${POSTGRE_VER}-setup initdb
+	sudo /usr/pgsql-${POSTGRE_VER}/bin/postgresql-${POSTGRE_VER}-setup initdb
 	disp_msglvl2 "Enable auto start"
 	sudo systemctl enable postgresql-${POSTGRE_VER}
 	# Created symlink /etc/systemd/system/multi-user.target.wants/postgresql-15.service → /usr/lib/systemd/system/postgresql-15.service.

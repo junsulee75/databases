@@ -4,6 +4,8 @@ Personal notes and test scripts for various databases.
 Based on my major database experience is DB2, exploring other database architecture and features.  
 Also documenting my thoughts with comparison.    
 
+> Install scripts are for Redhat environment only. (Not Ubuntu. will support later)     
+
 ## Contents
 
 - [Databases](#databases)

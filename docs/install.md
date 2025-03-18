@@ -11,10 +11,12 @@ Installation and configuration related
     - [standalone single](#standalone-single)
     - [Processes](#processes)
     - [user](#user)
-      - [Execution file path](#execution-file-path)
-      - [Install path](#install-path)
+    - [Execution file path](#execution-file-path)
+    - [Install path](#install-path)
   - [mysql](#mysql)
     - [Using repository](#using-repository)
+  - [maria db](#maria-db)
+    - [Using repository](#using-repository-1)
 
 ## Db2
 
@@ -160,7 +162,7 @@ Success. You can now start the database server using:
 
 [content](#contents)   
 
-#### Execution file path   
+### Execution file path   
 
 ```
 # which createdb
@@ -173,7 +175,7 @@ lrwxrwxrwx 1 root root 26 Sep 12 00:36 /etc/alternatives/pgsql-createdb -> /usr/
 
 [content](#contents)   
 
-#### Install path  
+### Install path  
 Biggest file is 8.3 MB and all others are less than 1 MB.   
 
 ```
@@ -242,6 +244,59 @@ mysql -u root -p${NEWPW}
 
 ```
 
+
+
+[content](#contents)   
+
+## maria db
+Mostly same as mysql except repository.    
+
+[content](#contents)   
+
+### Using repository    
+
+```
+sudo tee /etc/yum.repos.d/mariadb.repo <<EOF
+[mariadb]
+name = MariaDB
+#baseurl = http://yum.mariadb.org/10.6/rhel8-amd64
+#baseurl = https://rpm.mariadb.org/11.4/rhel/$releasever/$basearch
+
+## mariadb 11.4 on Redhat 8.X ( Replace with interested versions )    
+baseurl = https://rpm.mariadb.org/11.4/rhel/8/x86_64
+module_hotfixes = 1
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+#enabled=1
+EOF
+
+cat /etc/yum.repos.d/mariadb.repo
+
+## Install
+sudo yum install MariaDB-server MariaDB-client
+### some messages during the installation
+#Two all-privilege accounts were created.
+#One is root@localhost, it has no password, but you need to
+#be system 'root' user to connect. Use, for example, sudo mysql
+#The second is mysql@localhost, it has no password either, but
+#you need to be the system 'mysql' user to connect.
+#After connecting you can set the password, if you would need to be
+#able to connect as any of these users with a password and without sudo
+
+grep mysql /etc/passwd # created user check  
+
+sudo systemctl enable --now mariadb
+
+sudo systemctl restart mariadb
+sudo systemctl status mariadb
+
+netstat -an |grep LISTEN |grep 3306
+
+mariadb -V 
+
+#which mariadb-secure-installation  # command path check. not going to do this on my test system. But consider on prod.   
+
+```
 
 
 [content](#contents)   

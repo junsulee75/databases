@@ -9,7 +9,7 @@ Connecting and listing up objects.
   - [Db2](#db2)
   - [PosgreSQL](#posgresql)
     - [Allow remote connections](#allow-remote-connections)
-    - [MISC](#misc)
+  - [MariaDB](#mariadb)
 
 ## Db2
 
@@ -94,6 +94,41 @@ psql -d testdb -c "ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSER
 ```
 
 Then, success. 
+
+
+[content](#contents)   
+
+
+## MariaDB
+
+```
+mariadb -u root  # connect by root, then create a test user giving password
+show databases;
+CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testuser';
+FLUSH PRIVILEGES;
+exit;
+
+mariadb -u testuser -p  # connect by created user.  
+show databases;
+CREATE DATABASE testdb;
+show databases;
+use testdb;
+
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    department VARCHAR(50)
+);
+show tables;
+INSERT INTO employees (name, age, department) VALUES 
+('Alice', 30, 'HR'),
+('Bob', 28, 'IT'),
+('Charlie', 35, 'Finance');
+
+SELECT * FROM employees;
+```
+
 
 
 [content](#contents)   
